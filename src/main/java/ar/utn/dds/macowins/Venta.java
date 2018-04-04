@@ -10,10 +10,12 @@ public class Venta {
 	ModoDePago modoDePago;
 	
 	public float subtotal() {
-		return items.stream().map(item->item.importe()).sum();
+		return (float)items.stream().mapToDouble(item ->item.importe()).sum();
 	}
 	public boolean esDeFecha(Date unaFecha) {
 		return this.fecha==unaFecha;
 	}
-	
+	public float total() {
+		return this.modoDePago.modificarSubtotal(this.subtotal());
+	}
 }

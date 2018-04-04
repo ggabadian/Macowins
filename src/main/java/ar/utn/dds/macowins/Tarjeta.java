@@ -3,7 +3,7 @@ package ar.utn.dds.macowins;
 public class Tarjeta implements ModoDePago {
 	int cuotas;
 	long coeficiente;
-	float recargo(float subtotal) {
+	public float recargo(float subtotal) {
 		return (this.cuotas*this.coeficiente+0.01F*subtotal);
 	}
 	
