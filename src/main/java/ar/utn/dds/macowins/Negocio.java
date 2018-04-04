@@ -8,7 +8,7 @@ public class Negocio {
 	List<Venta> ventas = new ArrayList<>();
 	
 	public float gananciasDeUnDia(Date unDia) {
-		return (float)this.ventas.stream().mapToDouble(venta->venta.total()).sum();
+		return (float)this.ventas.stream().filter(venta->venta.esDeFecha(unDia)).mapToDouble(venta->venta.total()).sum();
 	}
 	
 }
